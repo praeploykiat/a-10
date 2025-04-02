@@ -2,6 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser');
+const mongoSanitize=require('express-mongo-sanitize');
+
 
 //load var
 dotenv.config({path:'./config/config.env'});
@@ -14,6 +16,8 @@ const app = express();
 app.use(express.json());
 //cookieparser
 app.use(cookieParser());
+//sanitize data
+app.use(mongoSanitize());
 
 // app.get('/',(req,res) => {
 //     //res.send('<h1>Hello from express</h1>');
