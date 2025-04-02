@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser');
 const mongoSanitize=require('express-mongo-sanitize');
+const helmet = require('helmet');
 
 
 //load var
@@ -18,6 +19,8 @@ app.use(express.json());
 app.use(cookieParser());
 //sanitize data
 app.use(mongoSanitize());
+//set security header
+app.use(helmet());
 
 // app.get('/',(req,res) => {
 //     //res.send('<h1>Hello from express</h1>');
