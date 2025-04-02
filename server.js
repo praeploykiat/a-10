@@ -4,6 +4,8 @@ const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser');
 const mongoSanitize=require('express-mongo-sanitize');
 const helmet = require('helmet');
+const {xss} = require('express-xss-sanitizer');
+//const rateLimit = require('express-rate-limit');
 
 
 //load var
@@ -21,6 +23,11 @@ app.use(cookieParser());
 app.use(mongoSanitize());
 //set security header
 app.use(helmet());
+//set security header
+app.use(xss());
+//rate limiting
+//const limiter=rateLimit({windowsMs:10*60*1000,max:1}); //10 mins
+//app.use(limiter);
 
 // app.get('/',(req,res) => {
 //     //res.send('<h1>Hello from express</h1>');
