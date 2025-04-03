@@ -192,6 +192,26 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  *                  description: Some error happened
  */
 
+//delete hospital
+/**
+ * @swagger
+ * /hospitals/{id}:
+ *      delete:
+ *          summary: delete the hospital by id
+ *          tags: [Hospitals]
+ *          parameters: 
+ *              - in: path
+ *                name: id
+ *                schema:
+ *                      type: string
+ *                required: true
+ *                description: the hospital id
+ *          responses: 
+ *              200:
+ *                  description: The hospital was deleted
+ *              404:
+ *                  description: The hospital was not found
+ */
 
 //include other resource routers
 const appointmentRouter = require('./appointments');
