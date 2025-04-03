@@ -164,7 +164,7 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  * @swagger
  * /hospitals/{id}:
  *      put:
- *          summary: Update the hospital by id
+ *          summary: Update the hospital by the id
  *          tags: [Hospitals]
  *          parameters: 
  *              - in: path
@@ -197,7 +197,7 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  * @swagger
  * /hospitals/{id}:
  *      delete:
- *          summary: delete the hospital by id
+ *          summary: Remove the hospital by id
  *          tags: [Hospitals]
  *          parameters: 
  *              - in: path
