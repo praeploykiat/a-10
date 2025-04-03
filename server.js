@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const {xss} = require('express-xss-sanitizer');
 const rateLimit = require('express-rate-limit');
 const hpp=require('hpp');
+const cors = require('cors');
 
 
 //load var
@@ -31,7 +32,8 @@ const limiter=rateLimit({windowsMs:10*60*1000,max:1}); //10 mins
 app.use(limiter);
 //prevent http param pollutions
 app.use(hpp());
-
+//enable cors
+app.use(cors());
 
 // app.get('/',(req,res) => {
 //     //res.send('<h1>Hello from express</h1>');
