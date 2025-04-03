@@ -110,6 +110,31 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  *                                  $ref: '#/components/schemas/Hospital'
  */
 
+//get one hospital
+/**
+ * @swagger
+ * /hospitals/{id}:
+ *      get:
+ *          summary: Get the hospital by id
+ *          tags: [Hospitals]
+ *          parameters: 
+ *              - in: path
+ *                name: id
+ *                schema:
+ *                      type: string
+ *                required: true
+ *                description: the hospital id
+ *          responses: 
+ *              200:
+ *                  description: The hospital description by id
+ *                  contents:
+ *                      application/json:
+ *                          schema:
+ *                                 $ref: '#/components/schemas/Hospital'
+ *              404:
+ *                  description: The hospital was not found
+ */
+
 //include other resource routers
 const appointmentRouter = require('./appointments');
 
