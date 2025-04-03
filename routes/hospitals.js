@@ -85,7 +85,13 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  * 
  */
 
-
+//hospital tag
+/**
+ * @swagger
+ * tags:
+ *  name: Hospitals
+ *  description: The hospitals managing API
+ */
 
 
 //include other resource routers
