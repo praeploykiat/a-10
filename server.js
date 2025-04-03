@@ -6,6 +6,7 @@ const mongoSanitize=require('express-mongo-sanitize');
 const helmet = require('helmet');
 const {xss} = require('express-xss-sanitizer');
 const rateLimit = require('express-rate-limit');
+const hpp=require('hpp');
 
 
 //load var
@@ -28,6 +29,9 @@ app.use(xss());
 //rate limiting
 const limiter=rateLimit({windowsMs:10*60*1000,max:1}); //10 mins
 app.use(limiter);
+//prevent http param pollutions
+app.use(hpp());
+
 
 // app.get('/',(req,res) => {
 //     //res.send('<h1>Hello from express</h1>');
