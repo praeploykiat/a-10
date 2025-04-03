@@ -135,6 +135,33 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  *                  description: The hospital was not found
  */
 
+//add one hospital
+/**
+ * @swagger
+ * /hospitals:
+ *      post:
+ *          summary: Create a new hospital
+ *          tags: [Hospitals]
+ *          requestbody: 
+ *              required: true
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#/components/schemas/Hospital'
+ *              responses: 
+ *                  201:
+ *                  description: The hospital was successfully created
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                                 $ref: '#/components/schemas/Hospital'
+ *              500:
+ *                  description: Some server error
+ */
+
+
+
+
 //include other resource routers
 const appointmentRouter = require('./appointments');
 
