@@ -159,7 +159,38 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  *                  description: Some server error
  */
 
-
+//update hospital
+/**
+ * @swagger
+ * /hospitals/{id}:
+ *      put:
+ *          summary: Update the hospital by id
+ *          tags: [Hospitals]
+ *          parameters: 
+ *              - in: path
+ *                name: id
+ *                schema:
+ *                      type: string
+ *                required: true
+ *                description: the hospital id
+ *          requestbody:
+ *              required: true
+ *              content:
+ *                  apllication/json:
+ *                      schema:
+ *                          $ref: '#/components/schemas/Hospital'
+ *          responses: 
+ *              200:
+ *                  description: The hospital was updated
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                                 $ref: '#/components/schemas/Hospital'
+ *              404:
+ *                  description: The hospital was not found
+ *              500:
+ *                  description: Some error happened
+ */
 
 
 //include other resource routers
