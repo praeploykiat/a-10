@@ -93,6 +93,22 @@ const {getHospitals,getHospital,createHospital,updateHospital,deleteHospital} = 
  *  description: The hospitals managing API
  */
 
+/**
+ * @swagger
+ * /hospitals:
+ *      get:
+ *          summary: Returns the list of all the hospitals
+ *          tags: [Hospitals]
+ *          responses: 
+ *              200:
+ *                  description: The list of the hospitals
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                              type: array
+ *                              items:
+ *                                  $ref: '#/components/schemas/Hospital'
+ */
 
 //include other resource routers
 const appointmentRouter = require('./appointments');
